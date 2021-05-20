@@ -452,6 +452,10 @@ h2.subheading {
     z-index: 1000;
 }
 
+.pace {
+    display: none !important;
+}
+
 @media only screen and (max-width: 1200px) {
     .banner-caption {
         font-size: 18px;
