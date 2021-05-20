@@ -295,24 +295,36 @@ get_header();
 </div>
 </div>
 <script type="text/javascript">
+function update_selected_content() {
+    var hash = window.location.hash.substring(1);
+
+    if (hash) {
+        $('a[rel="' + hash + '"]').addClass('active');
+        $('a[rel="' + hash + '"]').next('.service-content').slideDown(200)
+
+        $('body,html').scrollTop($('a[rel="' + hash + '"]').next('.service-content').offset().top)
+
+
+    }
+}
 $(function() {
 
+
+    window.addEventListener('hashchange', function() {
+
+        $('.h2-a').removeClass('active');
+        $('.service-content').fadeOut(0)
+
+
+        update_selected_content()
+    }, false);
 
 
     Pace.on("done", function() {
         $('.main-container').fadeIn(0)
         checkvisible();
 
-        var hash = window.location.hash.substring(1);
-
-        if (hash) {
-            $('a[rel="' + hash + '"]').addClass('active');
-            $('a[rel="' + hash + '"]').next('.service-content').slideDown(200)
-
-            $('body,html').scrollTop($('a[rel="' + hash + '"]').next('.service-content').offset().top)
-
-
-        }
+        update_selected_content()
 
 
     });
@@ -326,20 +338,23 @@ $(function() {
     $('.h2-a').click(function() {
 
         window.location.hash = $(this).attr('rel');
-        $('body,html').scrollTop($(this).offset().top);
+        // $('body,html').scrollTop($(this).offset().top);
 
-        $('.h2-a').removeClass('active');
+        // $('.h2-a').removeClass('active');
         $(this).toggleClass('active');
-        if ($(this).hasClass('active')) {
-            $(this).next('.service-content').slideDown(200)
-        } else {
+        if (!$(this).hasClass('active')) {
             $('.service-content').fadeOut(0)
         }
-        for (i = 0; i < $('.h2-a').length; i++) {
-            if (!$('.h2-a').eq(i).hasClass('active')) {
-                $('.h2-a').eq(i).next('.service-content').fadeOut(0)
-            }
-        }
+        // if ($(this).hasClass('active')) {
+        //     $(this).next('.service-content').slideDown(200)
+        // } else {
+        //     $('.service-content').fadeOut(0)
+        // }
+        // for (i = 0; i < $('.h2-a').length; i++) {
+        //     if (!$('.h2-a').eq(i).hasClass('active')) {
+        //         $('.h2-a').eq(i).next('.service-content').fadeOut(0)
+        //     }
+        // }
     })
 })
 

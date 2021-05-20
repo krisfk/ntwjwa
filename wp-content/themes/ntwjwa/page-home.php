@@ -130,7 +130,7 @@ get_header();
 
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt-0 faderight-ele">
 
-                <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/images/sq-img-1.jpg" alt="">
+                <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/images/old-woman.jpg" alt="">
 
 
             </div>
@@ -209,7 +209,7 @@ get_header();
 
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 mt-0   fadeleft-ele">
 
-                <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/images/sq-img-4.jpg" alt="">
+                <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/images/kids.jpg" alt="">
 
 
             </div>
