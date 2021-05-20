@@ -1,0 +1,644 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Twenty Twenty-One
+Theme URI: https://wordpress.org/themes/twentytwentyone/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+Requires at least: 5.3
+Tested up to: 5.7
+Requires PHP: 5.6
+Version: 1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyone
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
+Twenty Twenty-One is distributed under the terms of the GNU GPL.
+*/
+
+
+/**
+ * SETTINGS
+ * File-header..........The file header for the themes style.css file.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
+ *
+ * TOOLS
+ * Functions............Global functions.
+ * Mixins...............Global mixins.
+ *
+ * GENERIC
+ * Normalize.css........Normalise browser defaults.
+ * Breakpoints..........Mixins and variables for responsive styles
+ * Vertical-margins.....Vertical spacing for the main components.
+ * Reset................Reset specific elements to make them easier to style in other contexts.
+ * Clearings............Clearings for the main components.
+ *
+ * ELEMENTS
+ * Blockquote...........Default blockquote.
+ * Forms................Element-level form styling.
+ * Headings.............H1–H6
+ * Links................Default links.
+ * Lists................Default lists.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ *
+ * BLOCKS
+ * Audio................Specific styles for the audio block.
+ * Button...............Specific styles for the button block.
+ * Code.................Specific styles for the code block.
+ * Columns..............Specific styles for the columns block.
+ * Cover................Specific styles for the cover block.
+ * File.................Specific styles for the file block.
+ * Gallery..............Specific styles for the gallery block.
+ * Group................Specific styles for the group block.
+ * Heading..............Specific styles for the heading block.
+ * Image................Specific styles for the image block.
+ * Latest comments......Specific styles for the latest comments block.
+ * Latest posts.........Specific styles for the latest posts block.
+ * Legacy...............Specific styles for the legacy gallery.
+ * List.................Specific styles for the list block.
+ * Media text...........Specific styles for the media and text block.
+ * Navigation...........Specific styles for the navigation block.
+ * Paragraph............Specific styles for the paragraph block.
+ * Pullquote............Specific styles for the pullquote block.
+ * Quote................Specific styles for the quote block.
+ * Search...............Specific styles for the search block.
+ * Separator............Specific styles for the separator block.
+ * Spacer...............Specific styles for the spacer block.
+ * Table................Specific styles for the table block.
+ * Verse................Specific styles for the verse block.
+ * Video................Specific styles for the video block.
+ * Utilities............Block alignments.
+ *
+ * COMPONENTS
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comment styles.
+ * Archives.............Archive styles.
+ * 404..................404 styles.
+ * Search...............Search styles.
+ * Navigation...........Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
+ * Pagination...........Pagination styles.
+ * Single...............Single page and post styles.
+ * Posts and pages......Misc, sticky post styles.
+ * Entry................Entry, author biography.
+ * Widget...............Widget styles.
+ * Editor...............Editor styles.
+ *
+ * UTILITIES
+ * A11y.................Screen reader text, prefers reduced motion etc.
+ * Color Palette........Classes for the color palette colors.
+ * Editor Font Sizes....Editor Font Sizes.
+ * Measure..............The width of a line of text, in characters.
+ */
+
+
+/* Categories 01 to 03 are the basics. */
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    line-height: 1.9 !important;
+}
+
+.skip-link {
+    display: none;
+}
+
+.top-bar {
+    display: block;
+    height: 29px;
+    background: #a62225;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 20px;
+}
+
+.logo-a img {
+    height: 75px;
+}
+
+.top-menu {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 15px;
+    margin: 0 50px 0 0;
+}
+
+.top-menu li:last-child {
+    margin: 0;
+}
+
+.top-menu li a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s all;
+}
+
+.top-menu li a:hover {
+    color: #ed1c24;
+}
+
+.top-menu li a.active {
+    color: #ed1c24;
+}
+
+.s-menu {
+    position: relative;
+    top: -3px;
+}
+
+.s-menu li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 22px 0 0;
+}
+
+.s-menu li img {
+    height: 28px;
+}
+
+.banner-caption {
+    font-size: 33px;
+    bottom: 0;
+    left: 0;
+    background: rgb(237 28 36 / 50%);
+    color: #fff;
+    line-height: 1.4;
+    padding: 10px 75px;
+}
+
+h2.subheading {
+    font-size: 33px !important;
+    /* border-left: 5px solid #ed1c24; */
+    padding: 0 0 0 23px;
+    position: relative;
+}
+
+.red-v-line {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 5px;
+    height: 39px;
+    background: #ed1c24;
+}
+
+.content-column {
+    padding: 0 25px !important;
+    margin: 20px 0 0 0 !important;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.light {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.quote {
+    font-size: 20px;
+    padding: 0 100px !important;
+    margin: -50px 0 0 0 !important;
+}
+
+.big-quote {
+    height: 32px;
+}
+
+.big-quote.oq {
+    position: absolute;
+    top: -30px;
+    left: 35px;
+}
+
+.big-quote.cq {
+    position: absolute;
+    bottom: -25px;
+    right: 35px;
+}
+
+.button {
+    border: 1px solid #ed1c24;
+    font-size: 15px;
+    font-weight: 500;
+    color: #a62225;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.2s all;
+}
+
+.white.button {
+    border: 1px solid #fff;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.2s all;
+}
+
+.white.button:hover {
+    color: #ed1c24;
+    background: #fff;
+}
+
+.button:hover {
+    background: #ed1c24;
+    color: #fff;
+}
+
+.circles-div-row a {
+    display: block;
+    width: 169px;
+    background: #a62225;
+    line-height: 1.4;
+    color: #fff;
+    text-decoration: none;
+    height: 169px;
+    margin: 0 auto;
+    border-radius: 90px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.circles-div-row a:hover {
+    color: #fff;
+}
+
+.circles-div-row {
+    margin: -85px auto 0 auto !important;
+    max-width: 920px;
+    position: relative;
+}
+
+.inner-container {
+    max-width: 920px;
+    margin: 0 auto !important;
+}
+
+.red-line {
+    display: block;
+    height: 1px;
+    background: #a62225;
+    margin: 50px 0 50px 0 !important;
+}
+
+.red-bg {
+    background: #ed1c24;
+    color: #fff;
+}
+
+.word-from-div {
+    margin: -130px 0 0 50px !important;
+}
+
+.h2-a {
+    color: #ed1c24;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s all;
+}
+
+.h2-a:hover {
+    color: #ed1c24;
+    opacity: 0.85;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+.delay-3 {
+    animation-delay: 1s;
+}
+
+.delay-4 {
+    animation-delay: 1.5s;
+}
+
+@-webkit-keyframes fadeInUp2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10%, 0);
+        transform: translate3d(0, 10%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeInLeft2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-10%, 0, 0);
+        transform: translate3d(-10%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeInRight2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(10%, 0, 0);
+        transform: translate3d(10%, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes zoomIn2 {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeInLeft2 {
+    animation: fadeInLeft2 forwards;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    /* opacity: 1; */
+}
+
+.fadeInUp2 {
+    animation: fadeInUp2 forwards;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    /* opacity: 1; */
+}
+
+.fadeInRight2 {
+    animation: fadeInRight2 forwards;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+}
+
+.zoomIn2 {
+    animation: zoomIn2 forwards;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+}
+
+.fadeleft-ele {
+    opacity: 0;
+}
+
+.faderight-ele {
+    opacity: 0;
+}
+
+.fadein-ele {
+    opacity: 0;
+}
+
+.service-content {
+    display: none;
+    text-align: justify;
+}
+
+.main-container {
+    display: none;
+}
+
+.mobile-menu-btn,
+.mobile-menu-close-btn {
+    display: none;
+    font-size: 35px;
+    color: #a72224;
+    text-decoration: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-close-btn:hover {
+    color: #a72224;
+}
+
+.logo-a {
+    position: relative;
+    z-index: 1000;
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner-caption {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+    .top-menu li {
+        display: inline-block;
+        list-style-type: none;
+        font-size: 15px;
+        margin: 0 30px 0 0;
+    }
+    .s-menu li {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0 10px 0 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .s-menu li {
+        display: inline-block !important;
+        margin: 0 5px 0 0 !important;
+    }
+    .top-menu {
+        display: none;
+        position: fixed;
+        /* top: 135px; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(255 255 255 / 80%);
+        z-index: 200;
+        padding: 20px !important;
+        text-align: left;
+        text-align: center;
+        padding: 135px 0 0 0 !important;
+    }
+    .top-menu li {
+        display: block;
+        padding: 0;
+        margin: 0 0 20px 0;
+        font-size: 22px;
+    }
+    .mobile-menu-btn {
+        display: inline-block;
+    }
+    .mobile-menu-close-btn {
+        display: none;
+    }
+    .mobile-reverse {
+        flex-direction: column-reverse;
+    }
+    .word-from-div {
+        margin: 20px 0 0 0 !important;
+    }
+    .circles-div-row a {
+        display: block;
+        width: 120px;
+        background: #a62225;
+        line-height: 1.4;
+        color: #fff;
+        text-decoration: none;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 90px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .quote {
+        font-size: 20px;
+        padding: 0 50px !important;
+        margin: 60px 0 0 0 !important;
+    }
+    .big-quote.oq {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        width: 30px;
+        height: auto;
+    }
+    .big-quote.cq {
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        width: 30px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h2.subheading {
+        font-size: 24px !important;
+        /* border-left: 5px solid #ed1c24; */
+        padding: 0 0 0 23px;
+        position: relative;
+    }
+    .red-v-line {
+        height: 28px;
+    }
+    .circles-div-row {
+        margin: 20px auto 0 auto !important;
+        max-width: 920px;
+        position: relative;
+        max-width: 400px;
+    }
+    .circles-div-row a {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px auto;
+    }
+    .button {
+        border: 1px solid #ed1c24;
+        font-size: 14px;
+        font-weight: 500;
+        color: #a62225;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+    .white.button {
+        border: 1px solid #fff;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .banner-caption {
+        font-size: 13px;
+        padding: 5px 13px;
+        line-height: 1.4;
+    }
+    h2.subheading {
+        font-size: 18px !important;
+        /* border-left: 5px solid #ed1c24; */
+        padding: 0 0 0 23px;
+        position: relative;
+    }
+    .red-v-line {
+        height: 22px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .logo-a img {
+        height: 60px;
+    }
+    .top-bar {
+        display: block;
+        height: 29px;
+        background: #a62225;
+        color: #fff;
+        font-size: 13px;
+        padding: 0 20px;
+        line-height: 29px;
+    }
+    .circles-div-row {
+        margin: 40px auto 0 auto !important;
+    }
+    .circles-div-row a {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px auto;
+    }
+    .quote {
+        font-size: 15px;
+        padding: 0 50px !important;
+        margin: 60px 0 0 0 !important;
+    }
+    .big-quote.oq {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        width: 30px;
+        height: auto;
+    }
+    .big-quote.cq {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        width: 30px;
+        height: auto;
+    }
+}
