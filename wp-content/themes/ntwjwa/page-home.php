@@ -286,21 +286,9 @@ $(function() {
     $('.circle').css({
         'opacity': 0
     })
-    // opacity: 0;
-    //     -webkit-transform: scale3d(.3, .3, .3);
-    //     transform:scale3d(.3, .3, .3)
 
-    //     .fadeleft-ele {
-    //     opacity: 0;
-    // }
 
-    // .faderight-ele {
-    //     opacity: 0;
-    // }
 
-    // .fadein-ele {
-    //     opacity: 0;
-    // }
 
     Pace.on("done", function() {
         $('.main-container').fadeIn(0)
